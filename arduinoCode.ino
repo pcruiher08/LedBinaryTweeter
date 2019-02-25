@@ -73,23 +73,37 @@ void setRegisterPin(int index, int value){
 unsigned long long suma = 0; 
 void loop(){
 
-     if(debounce(inputPin) == true){
-   //  call your function to change values here 
-   changeState();
- }
+     if(debounce(inputPin) == true) changeState();
+ 
 
      for (int i = 9; i >= 0; i--) {
         bits[i] = (suma & (1 << i)) != 0;
     }
 
-    //System.out.println(input + " = " + Arrays.toString(bits));
     //if(state) suma++;
     int button = digitalRead(2);
-    Serial.println(button);
+    //Serial.println(button);
+
+    /*
+        Serial.println(
+            (bits[0])?"1":"0"+
+            (bits[1])?"1":"0"+
+            (bits[2])?"1":"0"+
+            (bits[3])?"1":"0"+
+            (bits[4])?"1":"0"+
+            (bits[5])?"1":"0"+
+            (bits[6])?"1":"0"+
+            (bits[7])?"1":"0"+
+            (bits[8])?"1":"0"+
+            (bits[9])?"1":"0"
+        );
+    */
+    //Serial.print("\n");
+    //Serial.print(button);
     clearRegisters();
     //setRegisterPin(suma%10, HIGH);
     for(int i=10; i>=0; i--){
-        setRegisterPin(i, bits[i]?HIGH:LOW);
+        setRegisterPin(i, bits[9-i]?HIGH:LOW);
     }
     writeRegisters();
     delay(100);
@@ -98,6 +112,10 @@ void loop(){
 void changeState(){
     state = !state;
     if(state)suma++;
+    for(int i=9; i>=0; i--){
+        Serial.print(bits[i]);
+    }
+    Serial.println("-");
 }
 
 
