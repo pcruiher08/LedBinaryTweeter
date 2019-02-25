@@ -84,24 +84,7 @@ void loop(){
     int button = digitalRead(2);
     //Serial.println(button);
 
-    /*
-        Serial.println(
-            (bits[0])?"1":"0"+
-            (bits[1])?"1":"0"+
-            (bits[2])?"1":"0"+
-            (bits[3])?"1":"0"+
-            (bits[4])?"1":"0"+
-            (bits[5])?"1":"0"+
-            (bits[6])?"1":"0"+
-            (bits[7])?"1":"0"+
-            (bits[8])?"1":"0"+
-            (bits[9])?"1":"0"
-        );
-    */
-    //Serial.print("\n");
-    //Serial.print(button);
     clearRegisters();
-    //setRegisterPin(suma%10, HIGH);
     for(int i=10; i>=0; i--){
         setRegisterPin(i, bits[9-i]?HIGH:LOW);
     }
@@ -113,17 +96,4 @@ void changeState(){
     state = !state;
     if(state)suma++;
     Serial.write(suma);
-    /*
-    for(int i=9; i>=0; i--){
-        Serial.print(bits[i]);
-    }
-    Serial.println("-");
-    */
 }
-
-
-
-
-
-
-
