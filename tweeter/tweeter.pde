@@ -10,19 +10,23 @@ void setup(){
   printArray(Serial.list());
   myPort = new Serial(this, Serial.list()[0], 9600);
 
-  simpletweet.setOAuthConsumerKey("8Htu2FxcNcg2DlzMYTksa3WF6");
-  simpletweet.setOAuthConsumerSecret("tqGeHPv8sk6IfLqV7b2kHAFGp9ZdiQLPOTVF5uh80lWYN1vK7J");
+  simpletweet.setOAuthConsumerKey("5fnwFIsXywz3x29VP6wSMlLtm");
+  simpletweet.setOAuthConsumerSecret("4FJUbUop1xPc5Rohok77omD7Ah3HzTQ4eqMppRQdvW5bSGfpXq");
   simpletweet.setOAuthAccessToken("735237998-MhzepvvH1UY587w1QlnesaM6NYqRP3rIBBK9qxQj");
   simpletweet.setOAuthAccessTokenSecret("OqeIHCqgfXM7anFLolZgU4RNN8eAtqInEuUlsyTX4BFmf");
 }
 
 boolean[] bits = new boolean[10];
 int suma = 0; 
-
+int sumaAnterior = 0; 
+boolean flagToTweet = false; 
 void draw(){
+  flagToTweet = false;
   while(myPort.available()>0){
+    sumaAnterior = suma;
     suma = myPort.read();
-    println(suma);
+    if(suma!=sumaAnterior) flagToTweet = true; else flagToTweet = false;
+    println("suma: " + suma + ", suma anterior: "+ sumaAnterior);
   }
   
   for(int i = 0; i<10; i++){
@@ -41,9 +45,10 @@ void draw(){
   }
 
   
-
-    //String tweet = simpletweet.tweetImage(get(),"");
-    //println("Posted " + tweet);
+    if(flagToTweet){
+      String tweet = simpletweet.tweetImage(get(),"LED Array " + suma + " \n #ILoveCircuits");
+      println("Posted " + tweet);
+    }
 
 
 }
