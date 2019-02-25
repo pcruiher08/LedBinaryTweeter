@@ -70,7 +70,7 @@ void setRegisterPin(int index, int value){
     bool bits[10];
 
 
-unsigned long long suma = 0; 
+int suma = 0; 
 void loop(){
 
      if(debounce(inputPin) == true) changeState();
@@ -112,10 +112,13 @@ void loop(){
 void changeState(){
     state = !state;
     if(state)suma++;
+    Serial.write(suma);
+    /*
     for(int i=9; i>=0; i--){
         Serial.print(bits[i]);
     }
     Serial.println("-");
+    */
 }
 
 

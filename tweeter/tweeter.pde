@@ -1,11 +1,14 @@
 import gohai.simpletweet.*;
 import java.math.*;
 SimpleTweet simpletweet;
-
+import processing.serial.*;
+Serial myPort; 
 void setup(){
   size(500, 200);
   frameRate(1);
   simpletweet = new SimpleTweet(this);
+  printArray(Serial.list());
+  myPort = new Serial(this, Serial.list()[0], 9600);
 
   simpletweet.setOAuthConsumerKey("8Htu2FxcNcg2DlzMYTksa3WF6");
   simpletweet.setOAuthConsumerSecret("tqGeHPv8sk6IfLqV7b2kHAFGp9ZdiQLPOTVF5uh80lWYN1vK7J");
@@ -17,11 +20,16 @@ boolean[] bits = new boolean[10];
 int suma = 0; 
 
 void draw(){
+  while(myPort.available()>0){
+    suma = myPort.read();
+    println(suma);
+  }
   
   for(int i = 0; i<10; i++){
     bits[9-i] = (suma & (1 << i)) !=0 ;
   }
-  println(suma++);
+  
+  println(suma);
   background(0,255,100);
   noStroke();
   for(int j = 0; j<10; j++){
