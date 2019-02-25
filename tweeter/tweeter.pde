@@ -19,9 +19,9 @@ int suma = 0;
 void draw(){
   
   for(int i = 0; i<10; i++){
-    bits[9-i] = (suma++ & (1 << i)) !=0 ;
+    bits[9-i] = (suma & (1 << i)) !=0 ;
   }
-  
+  println(suma++);
   background(0,255,100);
   noStroke();
   for(int j = 0; j<10; j++){
