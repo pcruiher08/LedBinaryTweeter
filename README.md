@@ -10,6 +10,12 @@
 ## Code Display
 <img src="proof.png">
 
+## Circuit
+<img src="circuit.jpg">
+
+## Button to be pressed
+<img src="toggleButton.jpg">
+
 ## Flow Diagram
 <img src="FluxDiagramLedBinaryTweeter.jpg">
 
