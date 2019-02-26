@@ -4,3 +4,6 @@
 
 ## Flow Diagram
 <img src="FluxDiagramLedBinaryTweeter.jpg">
+
+## Tweet Demonstration
+<img src="tweet.png">
