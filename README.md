@@ -9,13 +9,13 @@
 
 
 Process
-'''
+```
 Shift registers circuit
 Arduino Code and LEDs display
 Button adder
 Processing Code and LEDs display
 Twitter API connection
-'''
+```
 
 ## Code Display
 <img src="proof.png">
