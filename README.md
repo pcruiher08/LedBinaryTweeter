@@ -35,5 +35,10 @@ Twitter API connection
 ## Button Circuit Diagram
 <img src = "button.png">
 
-## Single Led Circuit
+## Single LED Circuit
 <img src = "singleLed.png">
+
+LED Circuit Description
+```
+The complete circuit contains 10 different Shift Register Outupts, meaning that there's a total current consumption of 73.8490 mA by the LEDs in the circuit. 
+```
