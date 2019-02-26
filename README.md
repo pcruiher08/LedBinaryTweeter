@@ -33,7 +33,7 @@ Twitter API connection
 <img src="tweet.png">
 
 ## Button Circuit Diagram
-<img src = "button.pdf">
+<img src = "button.png">
 
 ## Single Led Circuit
-<img src = "singleLed.pdf">
+<img src = "singleLed.png">
