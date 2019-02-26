@@ -7,6 +7,16 @@
 - [x] Processing showing a virtual representation of what is shown with the LEDs
 - [x] Processing posting a tweet on Twitter
 
+
+Process
+'''
+Shift registers circuit
+Arduino Code and LEDs display
+Button adder
+Processing Code and LEDs display
+Twitter API connection
+'''
+
 ## Code Display
 <img src="proof.png">
 
