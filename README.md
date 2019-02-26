@@ -42,3 +42,7 @@ LED Circuit Description
 ```
 The complete circuit contains 10 different Shift Register Outupts, meaning that there's a total current consumption of 73.8490 mA by the LEDs in the circuit. 
 ```
+
+## Concluding 
+
+I liked this project because it helped me improve my skills joining concept between areas. I mixed electronics with programming which makes me be a better Engineer. I hope that I can keep improving with the help of interesting projects such as this one.
