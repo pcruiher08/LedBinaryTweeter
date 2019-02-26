@@ -3,6 +3,7 @@ import java.math.*;
 SimpleTweet simpletweet;
 import processing.serial.*;
 Serial myPort; 
+
 void setup(){
   size(500, 200);
   frameRate(1);
@@ -45,10 +46,10 @@ void draw(){
   }
 
   
-    if(flagToTweet){
-      String tweet = simpletweet.tweetImage(get(),"LED Array " + suma + " \n #ILoveCircuits");
-      println("Posted " + tweet);
-    }
+  if(flagToTweet){
+    String tweet = simpletweet.tweetImage(get(),"LED Array " + suma + " \n #ILoveCircuits");
+    println("Posted " + tweet);
+  }
 
 
 }
