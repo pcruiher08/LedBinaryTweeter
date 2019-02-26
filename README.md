@@ -31,3 +31,9 @@ Twitter API connection
 
 ## Tweet Demonstration
 <img src="tweet.png">
+
+## Button Circuit Diagram
+<img src = "button.pdf">
+
+## Single Led Circuit
+<img src = "singleLed.pdf">
