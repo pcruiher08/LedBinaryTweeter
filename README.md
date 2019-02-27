@@ -6,7 +6,7 @@
 - [x] Arduino connecting with Processing via a Serial port
 - [x] Processing showing a virtual representation of what is shown with the LEDs
 - [x] Processing posting a tweet on Twitter
-
+- [x] README.md done
 
 Process
 ```
